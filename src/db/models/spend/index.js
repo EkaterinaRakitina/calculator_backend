@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const spendSchema = new Schema({
-    where: String,
-    howMuch: String
+    text: String,
+    num: Number
 });
 
 module.exports = Spend = mongoose.model('spends', spendSchema);
