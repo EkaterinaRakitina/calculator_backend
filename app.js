@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-const apiRroutes = require('./src/modules/routes/routes')
+const apiRroutes = require('./src/modules/routes/routes');
 
 app.use(cors());
 app.use(express.json());
@@ -14,5 +14,5 @@ const uri =
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.listen(5000, () => {
-    console.log('Example app listening on port 5000');
-})
+  console.log('Example app listening on port 5000');
+});
