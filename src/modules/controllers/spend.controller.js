@@ -40,12 +40,12 @@ module.exports.deleteSpend = (req, res, next) => {
 
 module.exports.changeInfoSpend = (req, res, next) => {
   if (
-    req.query.hasOwnProperty('id') &&
+    req.body.hasOwnProperty('_id') &&
     (req.body.hasOwnProperty('text') ||
-      req.body.hasOwnProperty('date') ||
-      req.body.hasOwnProperty('num'))
+      req.body.hasOwnProperty('num') ||
+      req.body.hasOwnProperty('date'))
   ) {
-    Spend.updateOne({ _id: req.query.id }, req.body).then((result) => {
+    Spend.updateOne({ _id: req.body._id }, req.body).then((result) => {
       Spend.find().then((result) => {
         res.send({ data: result });
       });
